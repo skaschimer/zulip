@@ -542,9 +542,9 @@ ul.popover-group-menu-member-list {
     .stream-tab-element-header {
         margin: 0;
         display: inline-block;
-        font-weight: inherit;
-        /* 21px at 14px/1em */
-        font-size: 1.5em;
+        font-weight: 600;
+        /* 18px at 16px/1em */
+        font-size: 1.125em;
     }
 
     #user-profile-groups-tab,
@@ -600,11 +600,6 @@ ul.popover-group-menu-member-list {
         grid-area: top;
         margin-top: 0.3125em;
         margin-bottom: 0.75em;
-
-        .group-search:placeholder-shown + #clear_groups_search,
-        .stream-search:placeholder-shown + #clear_stream_search {
-            visibility: hidden;
-        }
     }
 
     .group-list-container,

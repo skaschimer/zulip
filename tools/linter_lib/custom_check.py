@@ -258,6 +258,7 @@ python_rules = RuleList(
                     "zerver/lib/message_cache.py",
                     'obj["subject"] = Message.EMPTY_TOPIC_FALLBACK_NAME',
                 ),
+                ("zerver/lib/push_notifications.py", '"subject",'),
             },
             "include_only": {
                 "zerver/data_import/",
@@ -577,7 +578,10 @@ html_rules: list["Rule"] = [
         "pattern": r'placeholder="[^{#](?:(?!\.com).)+$',
         "description": "`placeholder` value should be translatable.",
         "exclude_line": {
-            ("templates/zerver/realm_creation_subdomain_form_field.html", 'placeholder="acme"'),
+            (
+                "templates/zerver/create_realm/realm_creation_subdomain_form_field.html",
+                'placeholder="acme"',
+            ),
             ("templates/zerver/slack_import.html", 'placeholder="xoxb-…"'),
         },
         "exclude": {
@@ -721,7 +725,7 @@ html_rules: list["Rule"] = [
             "templates/zerver/email.html",
             "templates/zerver/development/email_log.html",
             # Social backend logos are dynamically loaded
-            "templates/zerver/accounts_home.html",
+            "templates/zerver/create_user/accounts_home.html",
             "templates/zerver/login.html",
             # Needs the width cleaned up; display: none is fine
             "web/templates/dialog_change_password.hbs",
@@ -739,7 +743,7 @@ html_rules: list["Rule"] = [
             "templates/zerver/config_error/container.html",
             "templates/zerver/dev_env_email_access_details.html",
             "templates/zerver/confirm_continue_registration.html",
-            "templates/zerver/register.html",
+            "templates/zerver/create_user/register.html",
             "templates/zerver/accounts_send_confirm.html",
             "templates/zerver/documentation_main.html",
         },
